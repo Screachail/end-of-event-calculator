@@ -1,0 +1,19 @@
+hour = int(input("Starting time (hours): "))
+mins = int(input("Starting time (minutes): "))
+dura = int(input("Event duration (minutes): "))
+
+hour += int(dura/60)
+mins += int(dura%60)
+
+
+if mins >= 60:
+    hour += 1
+    mins -= 60
+    
+if mins == 0:
+    mins = "00"
+    
+while hour >= 24:
+    hour -= 24
+    
+print(f"Your event ends at: {hour}:{mins}")
